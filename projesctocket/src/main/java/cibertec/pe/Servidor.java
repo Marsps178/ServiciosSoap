@@ -26,6 +26,7 @@ public class Servidor {
                 System.out.println("Mensaje recibido: " + mensaje);
                 out.writeUTF("Hola desde el cliente");
                 sc.close();
+                System.out.println("Cliente desconectado: " + sc.getInetAddress().getHostName());
             }
         } catch (Exception e) {
             e.printStackTrace();
