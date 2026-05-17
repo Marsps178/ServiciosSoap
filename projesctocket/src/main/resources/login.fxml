@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cibertec.pe.ui.LoginController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label text="Conexión al Servidor" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <TextField fx:id="txtHost" promptText="Host (ej: localhost)" text="localhost" />
+    <TextField fx:id="txtPuerto" promptText="Puerto (ej: 5000)" text="5000" />
+    <TextField fx:id="txtNick" promptText="Nickname" />
+
+    <Button fx:id="btnConectar" text="Conectar" onAction="#conectar" maxWidth="Infinity" />
+
+    <Label fx:id="lblEstado" text="" style="-fx-text-fill: red;" />
+</VBox>

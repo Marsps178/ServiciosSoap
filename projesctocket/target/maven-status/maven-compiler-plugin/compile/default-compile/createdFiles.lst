@@ -1,0 +1,8 @@
+cibertec\pe\ui\LoginController.class
+cibertec\pe\Cliente.class
+cibertec\pe\servidor\ManejadorCliente.class
+cibertec\pe\ui\ChatController.class
+cibertec\pe\Servidor.class
+cibertec\pe\cliente\ClienteMain.class
+cibertec\pe\servidor\Servidor.class
+cibertec\pe\cliente\ClienteSocket.class

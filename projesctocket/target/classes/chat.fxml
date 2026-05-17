@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="cibertec.pe.ui.ChatController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+
+    <left>
+        <VBox spacing="5" minWidth="120">
+            <padding>
+                <Insets right="10" />
+            </padding>
+            <Label text="Conectados" style="-fx-font-weight: bold;" />
+            <ListView fx:id="lstUsuarios" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="5">
+            <TextArea fx:id="txtAreaMensajes" editable="false" VBox.vgrow="ALWAYS" />
+            <HBox spacing="5">
+                <TextField fx:id="txtInput" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnEnviar" text="Enviar" />
+                <Button fx:id="btnDesconectar" text="Desconectar" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
