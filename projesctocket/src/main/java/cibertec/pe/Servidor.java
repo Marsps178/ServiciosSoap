@@ -2,27 +2,42 @@ package cibertec.pe;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.IOException;
+import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
+
 
 public class Servidor {
     public static void main(String[] args) {
-        final String HOST = "localhost";
-        final int PUERTO = 5000;
+        ServerSocket servidor = null;
+        Socket sc = null;
         DataInputStream in;
         DataOutputStream out;
+        final int PUERTO = 5000;
 
         try {
-            Socket sc = new Socket(HOST, PUERTO);
-        } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
+            servidor = new ServerSocket(PUERTO);
+            System.out.println("Servidor iniciado en el puerto " + PUERTO);
+            while (true) {
+                sc = servidor.accept();
+                System.out.println("Cliente conectado: " + sc.getInetAddress().getHostName());
+                in = new DataInputStream(sc.getInputStream());
+                out = new DataOutputStream(sc.getOutputStream());
+                String mensaje = in.readUTF();
+                System.out.println("Mensaje recibido: " + mensaje);
+                out.writeUTF("Hola desde el cliente");
+                sc.close();
+            }
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+        } finally {
+            try {
+                if (servidor != null) {
+                    servidor.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        
-        System.out.println("Hello world!");
+
     }
 }
