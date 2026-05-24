@@ -57,11 +57,11 @@ public class frmCliente extends JFrame {
 	}
 	
 	void enviarAfiliado() {
-		Afiliado afiliado1 = new Afiliado(123,1500,true);
-		Afiliado afiliado2 = new Afiliado(456,580,false);
-		Afiliado afiliado3 = new Afiliado(789,1500,false);
-		Afiliado afiliado4 = new Afiliado(901,1800,false);
-		Afiliado afiliado5 = new Afiliado(789,1200,false);
+		Afiliado afiliado1 = new Afiliado(123,1500,"Marco", "Perez", "marco.perez@example.com", 1);
+		Afiliado afiliado2 = new Afiliado(456,580,"Luis", "Gomez", "luis.gomez@example.com", 0);
+		Afiliado afiliado3 = new Afiliado(789,1500,"Ana", "Rodriguez", "ana.rodriguez@example.com", 0);
+		Afiliado afiliado4 = new Afiliado(901,1800,"Carlos", "Martinez", "carlos.martinez@example.com", 0);
+		Afiliado afiliado5 = new Afiliado(789,1200,"Elena", "Sanchez", "elena.sanchez@example.com", 0);
 		
 		List<Afiliado> afiliados = new ArrayList<>();
 		
@@ -72,7 +72,7 @@ public class frmCliente extends JFrame {
 		afiliados.add(afiliado5);
 		
 		try {
-			Socket socket = new Socket("localhost", 500);
+			Socket socket = new Socket("localhost", 5000);
 			ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
 			out.writeObject(afiliados);
 			

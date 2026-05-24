@@ -6,15 +6,21 @@ import java.io.Serializable;
 public class Afiliado implements Serializable {
     private int codigo;
     private double monto;
-    private boolean condicion;
+    private String nombre;
+    private String apellido;
+    private String correo;
+    private int condicion;
 
     public Afiliado() {
         
     }
 
-    public Afiliado(int codigo, double monto, boolean condicion) {
+    public Afiliado(int codigo, double monto, String nombre, String apellido, String correo, int condicion) {
         this.codigo = codigo;
         this.monto = monto;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
         this.condicion = condicion;
     }
 
@@ -34,12 +40,38 @@ public class Afiliado implements Serializable {
         this.monto = monto;
     }
 
-    public boolean isCondicion() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getCondicion() {
         return condicion;
     }
 
-    public void setCondicion(boolean condicion) {
+    public void setCondicion(int condicion) {
         this.condicion = condicion;
     }
+
+
 
 }
