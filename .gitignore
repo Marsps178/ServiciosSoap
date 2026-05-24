@@ -1,0 +1,46 @@
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+.DS_Store
+.metadata/
+.settings/
+.classpath
+.project
+*.iml
+*.sublime-workspace
+
+# Build & Compilation
+target/
+build/
+dist/
+*.class
+*.jar
+*.exe
+
+# Maven
+*.pom.bak
+
+# Node.js (if used)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
+*.pid
